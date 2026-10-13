@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Palette from user specification:
+       - CLOUD: #F1FCFF (ethereal, clean, calming cloud white-blue)
+       - SKY: #A8DFFA (inviting, friendly, fresh sky cyan-blue)
+       - Complementary human-friendly high-contrast slate & navy
+    */
+    --bg-primary: #F1FCFF;
+    --bg-card: #FFFFFF;
+    --bg-surface: #F8FDFF;
+    --border-color: #A8DFFA;
+    --border-subtle: #CBEBFB;
+    
+    --text-primary: #0C2340;
+    --text-secondary: #334E68;
+    --text-muted: #627D98;
+    
+    --brand-cloud: #F1FCFF;
+    --brand-sky: #A8DFFA;
+    --brand-sky-vibrant: #0284C7;
+    --brand-sky-dark: #0369A1;
+    
+    --status-safe: #10B981;
+    --status-caution: #F59E0B;
+    --status-high: #F97316;
+    --status-critical: #EF4444;
+    
+    --command-surface: #FFFFFF;
+    --command-card: #F8FDFF;
+    --command-border: #A8DFFA;
+  }
+
+  .dark {
+    --bg-primary: #0F172A;
+    --bg-card: #1E293B;
+    --bg-surface: #334155;
+    --border-color: #38BDF8;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+  }
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom friendly Cloud & Sky scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1FCFF;
+}
+::-webkit-scrollbar-thumb {
+  background: #A8DFFA;
+  border-radius: 9999px;
+  border: 2px solid #F1FCFF;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0284C7;
+}
+
+/* Leaflet styling fixes for friendly Cloud & Sky theme */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  background: #E8F7FF !important;
+  font-family: inherit !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #0C2340 !important;
+  border: 1.5px solid #A8DFFA !important;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 30px -10px rgba(12, 35, 64, 0.15) !important;
+  padding: 4px !important;
+}
+
+.leaflet-popup-tip {
+  background: #FFFFFF !important;
+  border: 1.5px solid #A8DFFA !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #FFFFFF !important;
+  color: #0C2340 !important;
+  border-color: #A8DFFA !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #A8DFFA !important;
+  color: #0369A1 !important;
+}
+
+/* Custom glow effects with Sky and Cloud palette */
+.glow-sky {
+  box-shadow: 0 4px 20px rgba(168, 223, 250, 0.55);
+}
+
+.glow-card {
+  box-shadow: 0 8px 30px rgba(12, 35, 64, 0.05);
+}
+
+.friendly-shadow {
+  box-shadow: 0 4px 24px -2px rgba(168, 223, 250, 0.3), 0 2px 6px -1px rgba(12, 35, 64, 0.04);
+}
